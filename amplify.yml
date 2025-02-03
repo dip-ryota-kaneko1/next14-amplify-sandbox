@@ -1,0 +1,25 @@
+version: 1
+frontend:
+  phases:
+    preBuild:
+      commands:
+        # pnpmをセットアップ
+        - 'npm install -g pnpm'
+        - 'pnpm config set store-dir .pnpm-store'
+        # バージョン確認
+        - 'echo "Node.js Version: $(pnpm node -v)"'
+        - 'echo "pnpm Version: $(pnpm -v)"'
+        # パッケージのインストール
+        - 'pnpm install --frozen-lockfile'
+    build:
+      commands:
+        # ビルド
+        - 'pnpm rm:fetch-cache && pnpm exec next build'
+  artifacts:
+    baseDirectory: .next
+    files:
+      - '**/*'
+  cache:
+    paths:
+      - '.next/cache/**/*'
+      - '.pnpm-store/**/*'

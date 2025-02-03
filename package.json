@@ -3,8 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
+    "dev": "pnpm run '/^dev:.*/'",
+    "dev:next": "next dev",
+    "rm:fetch-cache": "rm -rf .next/cache/fetch-cache",
+    "build:next": "next build",
     "start": "next start",
     "lint": "next lint"
   },
