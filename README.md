@@ -1,5 +1,5 @@
 > [!IMPORTANT]
-> Static Site Generation (SSG) で構成
+> Server Side Rendering (SSR) で構成
 
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 

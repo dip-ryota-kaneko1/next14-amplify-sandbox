@@ -16,9 +16,10 @@ frontend:
         # ビルド
         - 'pnpm rm:fetch-cache && pnpm exec next build'
   artifacts:
-    baseDirectory: out
+    baseDirectory: .next
     files:
       - '**/*'
   cache:
     paths:
+      - '.next/cache/**/*'
       - '.pnpm-store/**/*'
